@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<html lang="en">
+<head>
+<style>
+    h1,h5{
+    text-align:center;
+    font-family: "Copperplate", Fantasy;
+    color:BLACK;
+    }
+
+    div{
+    text-align:center;
+    }
+
+  .button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #9900CC;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    }
+
+ .button:hover {background-color: #CC00FF}
+
+ .button:active {
+   background-color: #C700C7;
+   box-shadow: 0 5px #666;
+   transform: translateY(4px);
+   }
+
+</style>
+</head>
+<body>
+    <h1>WELCOME TO AsTOCK</h1>
+    <h5>THE WORLD'S MOST PROFESSIONAL STOCK SIMULATOR</h5>
+    <div>
+        {% if user.is_authenticated %}
+        <button class="button" onclick="window.location.href='/trade'">I WANT TO INVEST</button>
+
+        {% else %}
+        <button class="button" onclick="window.location.href='/sign-up'">I WANT TO BECOME A BETTER INVESTOR</button>
+        {% endif %}
+    </div>
+    <img src="static/LOGOBG.png">
+
+
+
+
+
+
+</body>
+</html>
+{% endblock %}

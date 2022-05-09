@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HI</title>
+<style>
+    h2{
+    font-family: "Copperplate", Fantasy;
+    color:BLACK;
+    }
+    h5{
+    font-family: "Helvetica", Sans-serif;
+
+
+</style>
+</head>
+<body>
+<h2>Welcome {{current_user.__dict__['username']}} </h2>
+<h5> available cash: {{cash}}$ </h5>
+{% if worth_list %}
+    {% for description in worth_list %}
+        <h5>{{description}}</h5>
+        <br>
+    {% endfor %}
+{% else %}
+    <h5>Start investing !</h5>
+{% endif %}
+<h5>The sum of your entire portfolio is {{sum+cash}}</h5>
+<br>
+</body>
+</html>
+{% endblock %}
